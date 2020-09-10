@@ -1,0 +1,16 @@
+service: sls-lohika-hw1
+frameworkVersion: '1'
+
+provider:
+  name: aws
+  runtime: python3.8
+  stage: dev
+  region: eu-central-1
+
+functions:
+  hello:
+    handler: handler.hw1
+    events:
+      - http:
+          path: hw1
+          method: get
